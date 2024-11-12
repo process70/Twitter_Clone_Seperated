@@ -8,6 +8,7 @@ import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import toast, { ErrorIcon } from 'react-hot-toast';
+import { notificationTypes } from '../../../notificationsTypes';
 
 const Notification = () => {
 
