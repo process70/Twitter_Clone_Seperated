@@ -50,10 +50,10 @@ app.use("/posts", postRouter)
 app.use("/notifications", notificationRouter)
 
 // Serve static files from the React/Vite app
-app.use(express.static(path.join(__dirname, '/frontend/dist')));
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // Handle React routing, return all requests to React app
-app.get('*', (req, res) => { res.sendFile(path.join(__dirname, '/frontend/dist/index.html'))});
+app.get('*', (req, res) => { res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))});
 
 /* // Add a catch-all route for debugging
 app.use((req, res) => {
