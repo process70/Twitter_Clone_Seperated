@@ -34,20 +34,23 @@ const LoginPage = () => {
 			const data = await res.json();
 			console.log("Cookies:", document.cookie);
 			if (!res.ok) {
-				throw new Error(data.message || "Something went wrong");
-				window.location.reload();
+			     toast.error(data.message);
+			     throw new Error(data.message || "Something went wrong");
 			}
 			
 			return data.user
 			  
 		  } catch (err) {
-			throw new Error(err.message);			
+			  toast.error(err.message);
+			  throw new Error(err.message);
+			 
 		  }
 		},
 		onError: (error) => {
 			console.log(error.message)
 			toast.error(error.message || "An error occurred during login. Please try again.");
 			updatePersist(false);
+			navigate(window.location.reload()); 
 		},
 		onSuccess: () => {
 			toast.success('Successful Login')
