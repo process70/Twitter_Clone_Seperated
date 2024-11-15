@@ -35,6 +35,7 @@ const LoginPage = () => {
 			console.log("Cookies:", document.cookie);
 			if (!res.ok) {
 				throw new Error(data.message || "Something went wrong");
+				window.location.reload();
 			}
 			
 			return data.user
